@@ -1,4 +1,5 @@
 /* variable des couleur */
+
 :root {
     --fond-principal:#0F0F0F;
     --font-contenu:#1A1A1A;
@@ -12,6 +13,69 @@
 }
 
 
+
+
+/* principal */
+
 body {
     background-color: var(--fond-principal);
+    text-align: center;
+    color: var(--texte-courant);
+}
+
+h1 {
+    color: var(--texte-titre);
+}
+
+p {
+    color: var(--texte-courant);
+}
+
+
+
+
+/* contenu */
+
+.bulle {
+    background-color: var(--font-contenu);
+    border-radius: 50px;
+    padding: 10px 10px 10px 10px;
+    margin: 100px 20% 50px 20%;
+    border: solid;
+    color: var(--font-contours);
+    transition: 0.5s;
+}
+
+button {
+    padding: 2% 25% 2% 25%;
+    margin: 50px 2% 0px 2%;
+    border-radius: 100px;
+    background-color: var(--font-contenu);
+    color: var(--objet-permanent);
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+
+
+
+/* activiter */
+
+.bulle:hover {
+    border-radius: 100px;
+    opacity: 75%;
+    padding: 5px 5px 5px 5px;
+    transition: 0.5s;
+}
+
+button:hover {
+    color: var(--objet-survol);
+    font-size: 30px;
+    transition: 0.2s;
+}
+
+button:active {
+    color: var(--objet-clic);
+    font-size: 30px;
+    transition: 0.2s;
 }
