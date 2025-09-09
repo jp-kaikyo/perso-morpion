@@ -1,12 +1,15 @@
-/* variable des couleur */
+/* ==== PALETTE DES COULEURS ==== */
+
 
 :root {
     --fond-principal:#0F0F0F;
     --font-contenu:#1A1A1A;
     --font-contours:#2E2E2E;
+    
     --texte-titre:#ffffff;
     --texte-courant:#d1d1d1;
     --texte-lien:#6f6f6f;
+    
     --objet-survol:#6E40C9;
     --objet-permanent:#8B5CF6; 
     --objet-clic:#9B6DED;
@@ -15,7 +18,152 @@
 
 
 
-/* principal */
+/* ==== PALETTE DES TEXTES ==== */
+
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+:root {
+    --police-titre: Georgia, "Times New Roman", serif;
+    --police-texte: "Comic Sans MS", cursive, sans-serif;
+    --taille-titre-principal: 2.5rem;  /* h1 */
+    --taille-sous-titre: 2rem;         /* h2 */
+    --taille-texte: 1rem;              /* p */
+    --gras-titre: 700;
+    --gras-texte: 400;
+}
+
+
+/* style titre */
+
+h1, h2 {
+    font-family: var(--police-titre);
+    font-weight: var(--gras-titre);
+    color: var(--texte-titre);
+    margin-bottom: 0.5em;
+}
+
+
+/* style texte */
+
+p, span {
+    font-family: var(--police-texte);
+    font-weight: var(--gras-texte);
+    font-size: var(--taille-texte);
+    color: var(--texte-courant);
+    line-height: 1.6;
+}
+
+
+/* style lien */
+a {
+    color: var(--texte-lien);
+    font-weight: 500;
+    font-style: oblique;
+    text-decoration: underline;
+}
+
+
+/* hover */
+
+a:hover {
+    color: var(--objet-survol);
+}
+
+
+/* active */
+
+a:active {
+    color: var(--objet-clic);
+}
+
+
+
+
+/* ==== PALETTE DES BULLE ==== */
+
+
+.bulle_principal {
+    display: grid;
+    grid-template-columns:repeat(3, 1fr); 
+    gap: 10px; 
+    background-color: var(--font-contenu);
+    color: var(--font-contours);
+    border-radius: 75px;
+    padding: 20px;
+    height: 300px;
+    width: 300px;
+    border: solid;
+}
+
+.bulle_secondaire {
+  background-color: var(--font-contenu);
+  color: var(--font-contours);
+  border: solid;
+  border-radius: 25px;
+  padding: 10px 40px 10px 40px;
+  margin: 60px 5% 100px 5%;
+}
+
+.bulle_info {
+    background-color: var(--font-contenu);
+    border-radius: 50px;
+    padding: 10px 10px 10px 10px;
+    margin: 50px 20% 25px 20%;
+    border: solid;
+    color: var(--font-contours);
+    transition: 0.5s;
+}
+
+.bulle_action {
+    background-color: var(--font-contenu);
+    color:var(--font-contours);
+    padding: 5% 1% 5% 1%;
+    margin: 1% 30% 1% 30%;
+    border-radius: 50px;
+    border: solid;
+}
+
+
+/* hover */
+
+.bulle_info:hover {
+    background-color: var(--font-contenu);
+    border-radius: 100px;
+    padding: 10px 10px 10px 10px;
+    margin: 50px 20% 25px 20%;
+    border: solid;
+    color: var(--font-contours);
+    transition: 0.5s;
+    font-size: 20px;
+}
+
+.bulle_action:hover {
+    background-color: var(--font-contenu);
+    color:var(--font-contours);
+    padding: 5% 1% 5% 1%;
+    margin: 1% 30% 1% 30%;
+    border-radius: 250px;
+    border: solid;
+}
+
+
+/* active */
+
+.bulle_action:active {
+    background-color: var(--font-contenu);
+    color:var(--font-contours);
+    padding: 5% 1% 5% 1%;
+    margin: 1% 30% 1% 30%;
+    border-radius: 250px;
+    border: solid;
+}
+
+
+
+
+/* ==== PRINCIPAL ==== */
+
 
 body {
     background-color: var(--fond-principal);
@@ -36,8 +184,6 @@ a {
 }
 
 
-
-
 /* contenu */
 
 .vertical {
@@ -45,30 +191,6 @@ a {
     justify-content: space-around;
 }
 
-.bulle {
-    background-color: var(--font-contenu);
-    border-radius: 50px;
-    padding: 10px 10px 10px 10px;
-    margin: 50px 20% 25px 20%;
-    border: solid;
-    color: var(--font-contours);
-    transition: 0.5s;
-}
-
-.bulle_jeux {
-    display: grid;
-    grid-template-columns:repeat(3, 1fr); 
-    gap: 10px; 
-    background-color: var(--font-contenu);
-    border-radius: 25px;
-    padding: 20px;
-    margin: auto;
-    height: 300px;
-    width: 300px;
-    border: solid;
-    color: var(--font-contours);
-    align-items: center;
-}
 
 .btn {
     padding: 2% 25% 2% 25%;
@@ -85,17 +207,6 @@ a {
     width: 100%;
     border-radius: 10px;
 }
-
-.joueur {
-  background-color: var(--font-contenu);
-  color: var(--font-contours);
-  border: solid;
-  border-radius: 25px;
-  padding: 10px 40px 10px 40px;
-  margin: 60px 5% 100px 5%;
-}
-
-
 
 /* activiter */
 
