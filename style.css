@@ -96,7 +96,7 @@ a:active {
     color:var(--font-contours);
     border: solid var(--font-contours);
     padding: 9px;
-    margin: 1% 10% 5% 10%;
+    margin: 5% 10% 5% 10%;
     text-align: center;
     border-radius: 50px;
 }
@@ -106,7 +106,7 @@ a:active {
     color:var(--font-contours);
     border: solid var(--font-contours);
     padding: 6px;
-    margin: 1% 15% 5% 15%;
+    margin: 5% 15% 5% 15%;
     text-align: center;
     border-radius: 75px;
 }
@@ -153,25 +153,18 @@ a:active {
 
 .bulle_info:hover {
     border: solid var(--objet-survol);
-    color: var(--texte-lien);
     padding: 6px;
     margin: 5% 19% 5% 19%;
     transition: 1s;
 }
-.bulle_info:hover * {
-    color: inherit; /* "Prends la même couleur que ton parent" */
-    border: none;
-    transition: 1s;
-}
-
 
 .bulle_action:hover {
-    border: solid var(--texte-lien);
     color: var(--objet-survol);
     padding: 0px;
     margin: 5% 21% 5% 21%;
     transition: 1s;
 }
+
 .bulle_action:hover * {
     color: inherit; /* "Prends la même couleur que ton parent" */
     border: none;
@@ -185,6 +178,7 @@ a:active {
     border: solid var(--objet-clic);
     transition: 1s;
 }
+
 .bulle_action:active {
     color: var(--objet-clic);
     transition: 1s;
@@ -193,7 +187,8 @@ a:active {
 
 
 
-/* ==== PALETTE DES BUTTONS ==== */
+
+/* ==== PALETTE DES btn ==== */
 
 
 .btn_base {
@@ -209,6 +204,7 @@ a:active {
     width: 90px;
     height: 90px;
 }
+
 
 /* survol */
 
