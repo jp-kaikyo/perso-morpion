@@ -92,11 +92,12 @@ a:active {
 
 
 .bulle_principal {
+    display: grid;
     background-color: var(--font-contenu);
     color:var(--font-contours);
     border: solid var(--font-contours);
     padding: 9px;
-    margin: 5% 10% 5% 10%;
+    margin: 0% 20% 2% 20%;
     text-align: center;
     border-radius: 50px;
 }
@@ -105,8 +106,8 @@ a:active {
     background-color: var(--font-contenu);
     color:var(--font-contours);
     border: solid var(--font-contours);
-    padding: 6px;
-    margin: 5% 15% 5% 15%;
+    padding: 10px 20px 10px 20px;
+    margin: 5% 10% 5% 10%;
     text-align: center;
     border-radius: 75px;
 }
@@ -114,16 +115,16 @@ a:active {
 .bulle_jeux {
     display: grid;
     grid-template-columns:repeat(3, 1fr); 
-    gap: 10px; 
+    grid-template-rows:repeat(3, 1fr); 
     background-color: var(--font-contenu);
     border-radius: 25px;
-    padding: 20px;
+    padding: 15px 5px 5px 15px;
     margin: auto;
     height: 300px;
     width: 300px;
     border: solid;
     color: var(--font-contours);
-    align-items: center;
+    justify-content: center;
 }
 
 .bulle_info {
@@ -131,7 +132,7 @@ a:active {
     color:var(--font-contours);
     border: solid var(--font-contours);
     padding: 3px;
-    margin: 5% 20% 5% 20%;
+    margin: 5% 20% 1% 20%;
     text-align: center;
     border-radius: 100px;
     transition: 1s;
@@ -154,7 +155,7 @@ a:active {
 .bulle_info:hover {
     border: solid var(--objet-survol);
     padding: 6px;
-    margin: 5% 19% 5% 19%;
+    margin: 5% 19% 1% 19%;
     transition: 1s;
 }
 
@@ -197,12 +198,23 @@ a:active {
     padding: 20px 30px 20px 30px;
     border-radius: 100px;
     margin: 2% ;
-    transition: 1s;
+    transition: 0.6s;
+}
+
+.btn_accueil {
+    display: grid;
+    background-color: var(--font-contenu);
+    color: var(--objet-permanent);
+    padding: 20px 30px 20px 30px;
+    border-radius: 100px;
+    margin: 1% ;
+    transition: 0.6s;
 }
 
 .btn_jeux {
     width: 90px;
     height: 90px;
+    transition: 0.10s;
 }
 
 
@@ -211,7 +223,21 @@ a:active {
 .btn_base:hover {
     padding: 25px 35px 25px 35px;
     border-radius: 100px;
-    transition: 0.5s;
+    color: var(--objet-survol);
+    transition: 0.6s;
+}
+
+.btn_base:hover {
+    padding: 25px 35px 25px 35px;
+    border-radius: 100px;
+    color: var(--objet-survol);
+    transition: 0.6s;
+}
+
+.btn_jeux:hover {
+    width: 95px;
+    height: 95px;
+    transition: 0.10s;
 }
 
 
@@ -220,7 +246,21 @@ a:active {
 .btn_base:active {
     padding: 15px 25px 15px 25px;
     border-radius: 100px;
-    transition: 0.5s;
+    color: var(--objet-clic);
+    transition: 0.4s;
+}
+
+.btn_accueil:active {
+    padding: 15px 25px 15px 25px;
+    border-radius: 100px;
+    color: var(--objet-clic);
+    transition: 0.4s;
+}
+
+.btn_jeux:active {
+    width: 85px;
+    height: 85px;
+    transition: 0.10s;
 }
 
 
@@ -236,5 +276,10 @@ body {
 
 .vertical {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+}
+
+.menu {
+    display: grid;
+    grid-column-start: auto;
 }
