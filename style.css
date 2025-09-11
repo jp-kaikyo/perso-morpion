@@ -26,8 +26,8 @@
 :root {
     --police-titre: Georgia, "Times New Roman", serif;
     --police-texte: "Comic Sans MS", cursive, sans-serif;
-    --taille-titre-principal: 2.5rem;  /* h1 */
-    --taille-sous-titre: 2rem;         /* h2 */
+    --taille-titre-principal: 2rem;  /* h1 */
+    --taille-sous-titre: 1.5rem;         /* h2 */
     --taille-texte: 1rem;              /* p */
     --gras-titre: 700;
     --gras-texte: 400;
@@ -106,8 +106,8 @@ a:active {
     background-color: var(--font-contenu);
     color:var(--font-contours);
     border: solid var(--font-contours);
-    padding: 10px 20px 10px 20px;
-    margin: 5% 10% 5% 10%;
+    padding: 10px 40px 10px 40px;
+    margin: 5% 5% 5% 5%;
     text-align: center;
     border-radius: 75px;
 }
@@ -131,8 +131,8 @@ a:active {
     background-color: var(--font-contenu);
     color:var(--font-contours);
     border: solid var(--font-contours);
-    padding: 3px;
-    margin: 5% 20% 1% 20%;
+    padding: 10px;
+    margin: 5% 25% 1% 25%;
     text-align: center;
     border-radius: 100px;
     transition: 1s;
@@ -149,13 +149,54 @@ a:active {
     transition: 1s;
 }
 
+.bulle_lien {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 15px;
+    background-color: var(--font-contenu);
+    border: solid var(--font-contours);
+    padding: 10px;
+    border-radius: 25px;
+    position: fixed;
+    bottom: 2%;
+    left: 35%;
+    right: 35%;
+    transition: 1s;
+}
+
+.bulle_lien h2 {
+    grid-area: 1 / 1 / 2 / 5;
+    margin: auto;
+}
+
+.bulle_lien a:nth-child(2) { 
+    grid-area: 2 / 1;
+    margin: auto;
+}
+
+.bulle_lien a:nth-child(3) { 
+    grid-area: 2 / 2;
+    margin: auto;
+}
+
+.bulle_lien a:nth-child(4) { 
+    grid-area: 2 / 3;
+    margin: auto;
+}
+
+.bulle_lien a:nth-child(5) { 
+    grid-area: 2 / 4;
+    margin: auto;
+}
+
 
 /* == hover == */
 
 .bulle_info:hover {
     border: solid var(--objet-survol);
     padding: 6px;
-    margin: 5% 19% 1% 19%;
+    margin: 5% 24% 1% 24%;
     transition: 1s;
 }
 
@@ -169,6 +210,15 @@ a:active {
 .bulle_action:hover * {
     color: inherit; /* "Prends la même couleur que ton parent" */
     border: none;
+    transition: 1s;
+}
+
+.bulle_lien:hover {
+    border-radius: 50px;
+    position: fixed;
+    bottom: 2%;
+    left: 36%;
+    right: 36%;
     transition: 1s;
 }
 
@@ -261,6 +311,28 @@ a:active {
     width: 85px;
     height: 85px;
     transition: 0.10s;
+}
+
+
+
+
+/* ==== PALETTE DES img ==== */
+
+
+img {
+    width: 50px;
+    height: 50px;
+    transition: 0.5s;
+}
+
+
+/* == hover == */
+
+img:hover {
+    width: 55px;
+    height: 55px;
+    opacity: 50%;
+    transition: 0.5s;
 }
 
 
