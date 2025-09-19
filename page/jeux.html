@@ -2,6 +2,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../style.css">
         <script src="../script.js"></script>
         <title>Morpion de jp</title>
@@ -11,41 +12,28 @@
         <main>
             <section class="menu">
                 <a href="../index.html"><button class="btn_accueil">Accueil</button></a>
-                <div class="bulle_principal">
-                    <h1>La partie entre le joueur O et le joueur X</h1>
-                </div>
             </section>
-           
- 
-            <div class="vertical">
-                <div class="bulle_secondaire">
-                    <h2># joueur O</h2>
-                    <p><span>0</span></p>
-                </div>
 
-
-                <!-- grille de jeux  -->
-
-                <div class="bulle_jeux">
-                    <button class="btn_jeux btn_1_a"><span></span></button>
-                    <button class="btn_jeux btn_1_a"><span></span></button>
-                    <button class="btn_jeux btn_3_a"><span></span></button>
-                    <button class="btn_jeux btn_1_b"><span></span></button>
-                    <button class="btn_jeux btn_2_b"><span></span></button>
-                    <button class="btn_jeux btn_3_b"><span></span></button>
-                    <button class="btn_jeux btn_1_c"><span></span></button>
-                    <button class="btn_jeux btn_2_c"><span></span></button>
-                    <button class="btn_jeux btn_3_c"><span></span></button>
-                </div>
-
-                <div class="bulle_secondaire">
-                    <h2># joueur X</h2>
-                    <p><span>0</span></p>
-                </div>
+            <div class="bulle_principal bulle_joueur">
+                <h1>le joueur O à<span>0</span><br>
+                    le joueur X à<span>0</span>
+                </h1>
             </div>
-            
 
-            <div class="bulle_info">
+            <!-- grille de jeux  -->
+            <div class="bulle_jeux">
+                <button class="btn_jeux btn_1_a"><span></span></button>
+                <button class="btn_jeux btn_1_a"><span></span></button>
+                <button class="btn_jeux btn_3_a"><span></span></button>
+                <button class="btn_jeux btn_1_b"><span></span></button>
+                <button class="btn_jeux btn_2_b"><span></span></button>
+                <button class="btn_jeux btn_3_b"><span></span></button>
+                <button class="btn_jeux btn_1_c"><span></span></button>
+                <button class="btn_jeux btn_2_c"><span></span></button>
+                <button class="btn_jeux btn_3_c"><span></span></button>
+            </div>
+
+            <div class="bulle_info bulle_joueur">
                 <p>Le vainqueur est <span></span></p>
             </div>
         </main>

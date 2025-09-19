@@ -23,15 +23,25 @@
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap');
+
 :root {
     --police-titre: Georgia, "Times New Roman", serif;
     --police-texte: "Comic Sans MS", cursive, sans-serif;
-    --taille-titre-principal: 2rem;  /* h1 */
+    --taille-titre-principal: 2rem;      /* h1 */
     --taille-sous-titre: 1.5rem;         /* h2 */
-    --taille-texte: 1rem;              /* p */
+    --taille-sous-liens:1rem;           /* h3 */
+    --taille-texte: 1rem;                /* p */           
     --gras-titre: 700;
     --gras-texte: 400;
 }
+@media(max-width:768px){
+    :root {
+    --taille-titre-principal: 1.25rem;  /* h1 */
+    --taille-sous-titre: 1rem;         /* h2 */
+    --taille-sous-liens: 0.75rem;         /* h3 */
+    --taille-texte: 0.75rem;              /* p */
+    --taille-liens: 0.75rem;                 /* a */
+}}
 
 
 /* style titre */
@@ -52,6 +62,14 @@ h2 {
     margin-bottom: 0.5em;
 }
 
+h3 {
+    font-family: var(--police-titre);
+    font-weight: var(--gras-titre);
+    font-size: var(--taille-sous-liens);
+    color: var(--texte-titre);
+    margin-bottom: 0.5em;
+}
+
 /* style texte */
 p, span {
     font-family: var(--police-texte);
@@ -61,13 +79,12 @@ p, span {
     line-height: 1.6;
 }
 
-
 /* style lien */
-
 a {
     font-style: oblique;
     font-weight: 500;
     text-decoration: underline;
+    font-size: var(--taille-texte);
     color: var(--texte-lien);
 }
 
@@ -102,6 +119,13 @@ a:active {
     border-radius: 50px;
 }
 
+@media(max-width:768px){
+    .bulle_principal {
+        padding: 6px;
+        margin: 2% 16% 2% 16%;
+    }
+}
+
 .bulle_secondaire {
     background-color: var(--font-contenu);
     color:var(--font-contours);
@@ -110,6 +134,13 @@ a:active {
     margin: 5% 5% 5% 5%;
     text-align: center;
     border-radius: 75px;
+}
+
+@media(max-width:768px){
+    .bulle_secondaire {
+        padding: 3px;
+        margin: 2% 20% 2% 20%;
+    }
 }
 
 .bulle_jeux {
@@ -138,6 +169,17 @@ a:active {
     transition: 1s;
 }
 
+@media(max-width:768px){
+    .bulle_info {
+        padding: 3px;
+        margin: 1% 2% 2% 2%;
+    }   
+}
+
+.bulle_joueur {
+    margin:15% 10% 15% 10%
+}
+
 .bulle_action {
     background-color: var(--font-contenu);
     color:var(--font-contours);
@@ -147,6 +189,13 @@ a:active {
     text-align: center;
     border-radius: 100px;
     transition: 1s;
+}
+
+@media(max-width:768px){
+    .bulle_action {
+        padding: 3px;
+        margin: 2% 24% 2% 24%;
+    } 
 }
 
 .bulle_lien {
@@ -162,7 +211,15 @@ a:active {
     transition: 1s;
 }
 
-.bulle_lien h2 {
+@media(max-width:768px){
+    .bulle_lien {
+        padding: 2px;
+        margin: 100% 25% 1% 25%;
+        font-size: var(--taille-texte);
+    }
+}
+
+.bulle_lien h3 {
     grid-area: 1 / 1 / 2 / 5;
     margin: auto;
 }
@@ -210,10 +267,30 @@ a:active {
     transition: 1s;
 }
 
+@media(max-width:768px){
+    .bulle_action:hover,
+    .bulle_info:hover {
+        color: var(--objet-survol);
+        padding: 3px;
+        margin: 1% 4% 2% 4%;
+    }
+}
+
 .bulle_lien:hover {
     border-radius: 50px;
     margin: 5% 36% 1% 36%;
     transition: 1s;
+}
+
+@media(max-width:768px){
+    .bulle_lien:hover {
+        padding: 2px;
+        margin: 1% 30% 1% 30%;
+    }
+ 
+    h3 {
+        font-size: var(--taille-sous-liens); 
+    }
 }
 
 
@@ -227,6 +304,20 @@ a:active {
 .bulle_action:active {
     color: var(--objet-clic);
     transition: 1s;
+}
+
+@media(max-width:768px){
+    .bulle_info:active,  
+    .bulle_action:active {
+        color: var(--objet-survol);
+        margin: 2% 32% 2% 32%;
+        transition: 1s;
+    }
+    .bulle_action:active * {
+        color: inherit; /* "Prends la même couleur que ton parent" */
+        border: none;
+        transition: 1s;
+    }
 }
 
 
@@ -243,6 +334,12 @@ a:active {
     border-radius: 100px;
     margin: 1% 1% 6% 1%;
     transition: 0.6s;
+}
+
+@media(max-width:768px){
+    .btn_base {
+        padding: 10px 20px 10px 20px;
+    }
 }
 
 .btn_accueil {
@@ -271,11 +368,12 @@ a:active {
     transition: 0.6s;
 }
 
-.btn_base:hover {
-    padding: 25px 35px 25px 35px;
-    border-radius: 100px;
-    color: var(--objet-survol);
-    transition: 0.6s;
+@media(max-width:768px){
+    .btn_base:hover {
+        padding: 14px 24px 14px 24px;
+        color: var(--objet-clic);
+        transition: 0.4s;
+    }
 }
 
 .btn_jeux:hover {
@@ -294,6 +392,12 @@ a:active {
     transition: 0.4s;
 }
 
+@media(max-width:768px){
+    .btn_base:active {
+    padding: 6px 16px 6px 16px;
+    }
+}
+
 .btn_accueil:active {
     padding: 15px 25px 15px 25px;
     border-radius: 100px;
@@ -310,23 +414,36 @@ a:active {
 
 
 
-/* ==== PALETTE DES img ==== */
+/* ==== PALETTE DES LOGO ==== */
 
 
-img {
-    width: 43px;
-    height: 43px;
+.logo {
+    width: 48px;
+    height: 48px;
     transition: 0.5s;
+}
+@media(max-width:768px){
+    .logo {
+        width: 24px;
+        height: 24px;
+    }
 }
 
 
 /* == hover == */
 
-img:hover {
-    width: 46px;
-    height: 46px;
+.logo:hover {
+    width: 52px;
+    height: 52px;
     opacity: 50%;
     transition: 0.5s;
+}
+
+@media(max-width:768px){
+    .logo:hover {
+        width: 26px;
+        height: 26px;
+    }
 }
 
 
